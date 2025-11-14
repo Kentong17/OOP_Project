@@ -9,6 +9,7 @@ module com.example.karenderya {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.graphics;
 
     opens com.example.karenderya to javafx.fxml;
     exports com.example.karenderya;

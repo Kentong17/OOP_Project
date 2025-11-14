@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.karenderya.MenuController">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox alignment="TOP_CENTER" prefWidth="200.0" spacing="20" style="-fx-background-color: #f2f2f2; -fx-padding: 20;">
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-alignment: center;" text="Welcome!&#10;Admin" />
+            <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                <Button prefWidth="140" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-font-weight: bold;" text="MENU" />
+                <Button fx:id="InventoryBtn" onAction="#handleInventoryClick" prefWidth="140" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-font-weight: bold;" text="INVENTORY" />
+                <Button fx:id="CustomerBtn" onAction="#handleCustomerClick" prefWidth="140" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-font-weight: bold;" text="CUSTOMER" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <HBox alignment="TOP_CENTER" prefHeight="644.0" prefWidth="811.0" spacing="20" style="-fx-padding: 20;">
+
+            <!-- Main Website-style Box -->
+            <VBox maxHeight="600" maxWidth="700" minHeight="500" minWidth="434.0" prefHeight="550" prefWidth="434.0" spacing="15" style="-fx-padding: 25; -fx-background-color: #ffffff; -fx-border-radius: 12; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10,0,0,3);">
+
+                <!-- TOP BOX for Shop Management label -->
+                <HBox alignment="TOP_LEFT" prefHeight="50" spacing="10">
+                    <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="Shop Management" />
+                </HBox>
+
+                <!-- FlowPane for Food Items -->
+                <FlowPane fx:id="menuFlow" hgap="20" prefHeight="435.0" prefWidth="478.0" prefWrapLength="600" vgap="20" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+            <Separator orientation="VERTICAL" prefHeight="550" prefWidth="14.0" />
+
+            <!-- ADDED ORDERS PANEL -->
+            <VBox alignment="TOP_CENTER" prefHeight="550.0" prefWidth="257.0" spacing="15" style="-fx-padding: 20; -fx-background-color: #f8f8f8; -fx-background-radius: 12;">
+                <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Added Orders" />
+                <TableView fx:id="orderTable" prefHeight="382.0" prefWidth="171.0">
+                    <columns>
+                        <TableColumn fx:id="itemColumn" prefWidth="120" text="Item" />
+                        <TableColumn fx:id="priceColumn" prefWidth="120" text="Price" />
+                    </columns>
+                </TableView>
+                <Label fx:id="totalLabel" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Total: $0" />
+                <HBox alignment="CENTER" spacing="15">
+                    <Button fx:id="removeButton" text="Remove Order" />
+                    <Button fx:id="confirmButton" text="Confirm Order" />
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
