@@ -5,32 +5,43 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane style="-fx-background-color: #E9E9F1;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.karenderya.LoginController">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.karenderya.LoginController"
+            style="-fx-background-color: #F5F6FA;">
 
-    <!-- Center the login card -->
     <center>
-        <StackPane alignment="CENTER">
-            <VBox alignment="CENTER" prefHeight="617.0" prefWidth="771.0" spacing="25" style="-fx-background-color: white;                               -fx-background-radius: 15;                               -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 3);                               -fx-padding: 30;">
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="252.13671875">
-                    <font>
-                        <Font name="Times New Roman" size="24.0" />
-                    </font>
-                </Text>
+        <StackPane prefWidth="400" prefHeight="400" alignment="CENTER">
+            <VBox alignment="CENTER" spacing="25"
+                  style="-fx-background-color: #ffffff;
+                         -fx-background-radius: 15;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 3);
+                         -fx-padding: 40;">
 
-                <!-- Header row with colored dots (top-right corner) -->
-                <HBox alignment="TOP_RIGHT" spacing="10" style="-fx-padding: 0 0 10 0;">
-                    <Circle fill="#FFD65B" radius="8" /> <!-- yellow -->
-                    <Circle fill="#FF5F56" radius="8" /> <!-- red -->
+                <!-- Top Circles -->
+                <HBox alignment="TOP_RIGHT" spacing="10">
+                    <Circle fill="#FFD65B" radius="8"/>
+                    <Circle fill="#FF5F56" radius="8"/>
                 </HBox>
 
-                <!-- Login title -->
-                <Label style="-fx-font-size: 28px; -fx-text-fill: black;" text="Login" />
+                <!-- Login Title -->
+                <Label text="Login"
+                       style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
 
-                <!-- Access Code field -->
-                <TextField fx:id="accessCodeField" prefHeight="40" prefWidth="350" promptText="Access Code" style="-fx-background-radius: 10;                                    -fx-background-color: #F3F3F3;                                    -fx-border-color: transparent;                                    -fx-padding: 10 15 10 15;" />
+                <!-- Access Code -->
+                <TextField fx:id="accessCodeField" prefWidth="300" prefHeight="40"
+                           promptText="Access Code"
+                           style="-fx-background-radius: 10; -fx-background-color: #f0f0f0; -fx-padding: 10 15;"/>
 
-                <!-- Sign In button -->
-                <Button fx:id="signInButton" onAction="#handleSignIn" prefHeight="40" prefWidth="200" style="-fx-background-radius: 10;                                 -fx-background-color: #3399FF;                                 -fx-text-fill: white;                                 -fx-font-size: 16px;" text="SIGN IN" />
+                <!-- Sign In Button -->
+                <Button fx:id="signInButton"
+                        text="SIGN IN"
+                        onAction="#handleSignIn"
+                        prefWidth="200" prefHeight="40"
+                        style="-fx-background-color: #3399FF;
+                               -fx-text-fill: white;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 10;"/>
             </VBox>
         </StackPane>
     </center>
